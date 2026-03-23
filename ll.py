@@ -1,3 +1,6 @@
+import random
+
+
 class Node:
     def __init__(self, name: str, artist: str, album: str):
         self.song_data = {
@@ -86,3 +89,8 @@ class LinkedList:
             if node.song_data["name"] == song_name:
                 return node
         return None
+    
+    def get_shuffled_order(self) -> list["Node"]:
+        nodes = list(self)
+        random.shuffle(nodes)
+        return nodes

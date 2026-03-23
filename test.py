@@ -1,6 +1,7 @@
 import json
 
 from ll import LinkedList, Node
+from playlist import Playlist
 
 with open("songs.json") as f:
     songs = json.load(f)
@@ -18,7 +19,20 @@ def display_playlist(ll: LinkedList) -> None:
 
 
 if __name__ == "__main__":
-    playlist = LinkedList()
-    load_playlist(playlist)
-    display_playlist(playlist)
-    
+    ll = LinkedList()
+    load_playlist(ll)
+    display_playlist(ll)
+
+    print("\n--- Testing Playlist Player ---\n")
+    player = Playlist(ll)
+
+    player.play()
+    player.next()
+    player.next()
+    player.toggle_shuffle()
+    player.next()
+    player.next()
+    player.toggle_shuffle()
+    player.go_to("Bohemian Rhapsody")
+    player.previous()
+    player.previous()
