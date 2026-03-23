@@ -21,3 +21,4 @@ if __name__ == "__main__":
     playlist = LinkedList()
     load_playlist(playlist)
     display_playlist(playlist)
+    
